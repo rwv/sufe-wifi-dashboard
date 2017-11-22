@@ -87,8 +87,8 @@ function login_config_submit() {
     };
     $.xmlrpc({
         url: service_url,
-        methodName: 'updateconfig',
-        params: login_config,
+        methodName: 'update_config',
+        params: [login_config],
         success: function (response, status, jqXHR) { /* ... */ },
         error: function (jqXHR, status, error) { /* ... */ }
     });
@@ -105,8 +105,8 @@ function other_config_submit() {
     };
     $.xmlrpc({
         url: service_url,
-        methodName: 'updateconfig',
-        params: other_config,
+        methodName: 'update_config',
+        params: [other_config],
         success: function (response, status, jqXHR) { /* ... */ },
         error: function (jqXHR, status, error) { /* ... */ }
     });
@@ -116,7 +116,7 @@ function myOnload() {
     // when html is ready
     $(document).ready(function () {
         info_update();
-        config_update();
+        // config_update();
         log_update();
     });
 
@@ -135,7 +135,7 @@ $('#log-modal').on('shown.bs.modal', function (e) {
 $('#login-settings-modal').on('shown.bs.modal', function (e) {
     config_update();
 })
-$('#other-setting-smodal').on('shown.bs.modal', function (e) {
+$('#other-settings-modal').on('shown.bs.modal', function (e) {
     config_update();
 })
 $('#login-settings-save').click(function () {
