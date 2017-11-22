@@ -1,0 +1,8 @@
+.table thead th {
+    border-top-width: 0px;
+    padding-top: 0px;
+}
+
+.nav-link {
+    color: #000000;
+}
