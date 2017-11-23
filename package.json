@@ -4,7 +4,9 @@
   "description": "Shanghai University of Finance and Economics Wi-Fi Dashboard 上海财经大学 Wi-Fi 自动登录管理界面",
   "main": "index.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
   "repository": {
     "type": "git",
@@ -23,5 +25,16 @@
   "homepage": "https://github.com/rwv/sufe-wifi-dashboard#readme",
   "dependencies": {
     "jquery": "^3.2.1"
+  },
+  "devDependencies": {
+    "electron-builder": "^19.45.5"
+  },
+  "build": {
+    "appId": "seedgou.sufe-wifi-dashboard",
+    "productName": "SUFE Wi-Fi Dashboard",
+    "mac": {
+      "target": "zip",
+      "category": "public.app-category.utilities"
+    }
   }
 }
