@@ -3,7 +3,7 @@
 
 <head>
     <meta charset=utf-8 />
-    <title>SUFE Wi-Fi Manager</title>
+    <title>SUFE Wi-Fi Dashboard</title>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, width=device-width">
     <meta name="author" content="seedgou" />
     <link href="css/bootstrap.min.css" rel="stylesheet" />
@@ -13,7 +13,8 @@
 
 <body>
     <nav id="navbar" class="navbar navbar-light bg-light mb-4">
-        <a class="navbar-brand" href="#"><span class="oi oi-rss-alt"></span> SUFE Wi-Fi Dashboard</a>
+        <a class="navbar-brand" href="#">
+            <span class="oi oi-rss-alt"></span> SUFE Wi-Fi Dashboard</a>
         <ul class="nav justify-content-end">
             <li class="nav-item">
                 <span data-toggle="tooltip" title="Start">
@@ -77,19 +78,27 @@
                     <tbody>
                         <tr>
                             <td>Program</td>
-                            <td><span id="service-status"></span></td>
+                            <td>
+                                <span id="service-status"></span>
+                            </td>
                         </tr>
                         <tr>
                             <td>Internet</td>
-                            <td><span id="internet-connection"></span></td>
+                            <td>
+                                <span id="internet-connection"></span>
+                            </td>
                         </tr>
                         <tr>
                             <td>Network Type</td>
-                            <td><span id="network-type"></span></td>
+                            <td>
+                                <span id="network-type"></span>
+                            </td>
                         </tr>
                         <tr>
                             <td>Current SSID</td>
-                            <td><span id="ssid"></span></td>
+                            <td>
+                                <span id="ssid"></span>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -122,7 +131,8 @@
                                 <span class="oi oi-envelope-closed"></span>
                             </div>
                             <div class="col-sm-11">
-                                If there is any issue, submit issue on GitHub or email me at <a href="mailto:i@zczc.cz">i@zczc.cz</a>
+                                If there is any issue, submit issue on GitHub or email me at
+                                <a href="mailto:i@zczc.cz">i@zczc.cz</a>
                             </div>
                         </div>
                         <hr>
@@ -131,9 +141,10 @@
                                 <span class="oi oi-code"></span>
                             </div>
                             <div class="col-sm-11">
-                                Developed by <a href="https://github.com/rwv">seedgou</a> with <span class="oi oi-heart"></span>.
-                                <br>
-                                Licensed under the MIT License.
+                                Developed by
+                                <a href="https://github.com/rwv">seedgou</a> with
+                                <span class="oi oi-heart"></span>.
+                                <br> Licensed under the MIT License.
                             </div>
                         </div>
                     </div>
@@ -261,7 +272,9 @@
             </div>
         </div>
     </div>
-    <script src="js/jquery-3.2.1.min.js"></script>
+    <script>
+        window.$ = window.jQuery = require('jquery');
+    </script>
     <script src="js/popper.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.xmlrpc.js"></script>

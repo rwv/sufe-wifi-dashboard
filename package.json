@@ -1,0 +1,27 @@
+{
+  "name": "sufe-wifi-dashboard",
+  "version": "1.0.0",
+  "description": "Shanghai University of Finance and Economics Wi-Fi Dashboard 上海财经大学 Wi-Fi 自动登录管理界面",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rwv/sufe-wifi-dashboard.git"
+  },
+  "keywords": [
+    "sufe",
+    "wifi",
+    "dashboard"
+  ],
+  "author": "seedgou",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rwv/sufe-wifi-dashboard/issues"
+  },
+  "homepage": "https://github.com/rwv/sufe-wifi-dashboard#readme",
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}
