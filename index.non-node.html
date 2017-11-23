@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset=utf-8 />
+    <title>SUFE Wi-Fi Dashboard</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, width=device-width">
+    <meta name="author" content="seedgou" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+    <link href="open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav id="navbar" class="navbar navbar-light bg-light mb-4">
+        <a class="navbar-brand" href="#">
+            <span class="oi oi-rss-alt"></span> SUFE Wi-Fi Dashboard</a>
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+                <span data-toggle="tooltip" title="Start">
+                    <a class="nav-link" id="nav-start" href="#">
+                        <span class="oi oi-media-play"></span>
+                    </a>
+                </span>
+            </li>
+            <li class="nav-item">
+                <span data-toggle="tooltip" title="Stop">
+                    <a class="nav-link" id="nav-stop" href="#">
+                        <span class="oi oi-media-stop"></span>
+                    </a>
+                </span>
+            </li>
+            <li class="nav-item">
+                <span data-toggle="tooltip" title="Log">
+                    <a class="nav-link" id="nav-log" href="#" data-toggle="modal" data-target="#log-modal">
+                        <span class="oi oi-script"></span>
+                    </a>
+                </span>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    <span class="oi oi-cog"></span>
+                </a>
+                <div class="dropdown-menu" style="min-width: 0rem;">
+                    <span data-toggle="tooltip" data-placement="left" title="Login Settings">
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#login-settings-modal">
+                            <span class="oi oi-key"></span>
+                        </a>
+                    </span>
+                    <div role="separator" class="dropdown-divider"></div>
+                    <span data-toggle="tooltip" data-placement="left" title="Advanced Settings">
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#other-settings-modal">
+                            <span class="oi oi-ellipses"></span>
+                        </a>
+                    </span>
+                    <div role="separator" class="dropdown-divider"></div>
+                    <span data-toggle="tooltip" data-placement="left" title="Close connector">
+                        <a class="dropdown-item" id="dropdown-close" href="#">
+                            <span class="oi oi-x" style="color:red"></span>
+                        </a>
+                    </span>
+                </div>
+            </li>
+            <li class="nav-item">
+                <span data-toggle="tooltip" title="Info">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#info-modal">
+                        <span class="oi oi-info"></span>
+                    </a>
+                </span>
+            </li>
+        </ul>
+    </nav>
+    <div class="container-fluid">
+        <div class="card mb-3" id="infomation">
+            <div class="card-header">Information</div>
+            <div class="card-body">
+                <table class="table" style="table-layout:fixed;" border="0">
+                    <thead>
+                        <tr>
+                            <th>Description</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Program</td>
+                            <td>
+                                <span id="service-status"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Internet</td>
+                            <td>
+                                <span id="internet-connection"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Network Type</td>
+                            <td>
+                                <span id="network-type"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Current SSID</td>
+                            <td>
+                                <span id="ssid"></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="modal fade" id="info-modal" role="dialog" aria-labelledby="infoModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="infoModalLabel">Info</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-1">
+                                <span class="oi oi-star"></span>
+                            </div>
+                            <div class="col-sm-11">
+                                Please star this repo on GitHub!
+                                <br>
+                                <a href="https://github.com/rwv/sufe-wifi-connector">https://github.com/rwv/sufe-wifi-connector</a>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-1">
+                                <span class="oi oi-envelope-closed"></span>
+                            </div>
+                            <div class="col-sm-11">
+                                If there is any issue, submit issue on GitHub or email me at
+                                <a href="mailto:i@zczc.cz">i@zczc.cz</a>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-1">
+                                <span class="oi oi-code"></span>
+                            </div>
+                            <div class="col-sm-11">
+                                Developed by
+                                <a href="https://github.com/rwv">seedgou</a> with
+                                <span class="oi oi-heart"></span>.
+                                <br> Licensed under the MIT License.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#" class="btn btn-success" data-dismiss="modal">OK</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="log-modal" role="dialog" aria-labelledby="logModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="logModalLabel">Log</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <pre class="pre-scrollable"><code id="service-log"></code></pre>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#" class="btn btn-success" data-dismiss="modal">OK</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="login-settings-modal" role="dialog" aria-labelledby="loginSettingsModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="loginSettingsModalLabel">Login Settings</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="login-settings-form" class="form-horizontal">
+                            <div class="form-group">
+                                <label for="network-type" class="col-form-label">Network Type:</label>
+                                <div class="form-group">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="radio" name="config-network-type" id="config-network-type-1" value="tel"> Tel
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="radio" name="config-network-type" id="config-network-type-2" value="cmcc"> CMCC
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="radio" name="config-network-type" id="config-network-type-3" value="unicom"> Unicom
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="username" class="col-form-label">Username:</label>
+                                <input type="text" class="form-control" name="config-username" id="config-username" placeholder="Enter username">
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="col-form-label">Password:</label>
+                                <input type="password" class="form-control" name="config-password" id="config-password" placeholder="Enter password">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#" id="login-settings-save" class="btn btn-success" data-dismiss="modal">Save</a>
+                        <a href="#" id="login-settings-cancel" class="btn btn-light" data-dismiss="modal">Cancel</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="other-settings-modal" role="dialog" aria-labelledby="otherSettingsModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="otherSettingsModalLabel">Advanced Settings</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="other-settings-form" class="form-horizontal">
+                            <div class="form-group">
+                                <label for="config-retry-interval" class="col-form-label">Retry Interval:</label>
+                                <div class="input-group">
+                                    <input type="number" class="form-control" id="config-retry-interval" placeholder="Retry Interval">
+                                    <span class="input-group-addon" id="config-retry-interval-addon">seconds</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="config-retry-times" class="col-form-label">Retry Times:</label>
+                                <input type="number" class="form-control" id="config-retry-times" placeholder="Retry Times">
+                            </div>
+                            <div class="form-group">
+                                <label for="config-detect-interval" class="col-form-label">Detect Interval:</label>
+                                <div class="input-group">
+                                    <input type="number" class="form-control" id="config-detect-interval" placeholder="Detect Interval">
+                                    <span class="input-group-addon" id="config-detect-interval-addon">seconds</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="config-log-level" class="col-form-label">Log Level:</label>
+                                <select class="form-control" id="config-log-level">
+                                    <option>CRITICAL</option>
+                                    <option>ERROR</option>
+                                    <option>WARNING</option>
+                                    <option>INFO</option>
+                                    <option>DEBUG</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#" id="other-settings-save" class="btn btn-success" data-dismiss="modal">Save</a>
+                        <a href="#" id="other-settings-cancel" class="btn btn-light" data-dismiss="modal">Cancel</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.xmlrpc.js"></script>
+    <script src="js/sufe.wifi.manager.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+</body>
+
+</html>
