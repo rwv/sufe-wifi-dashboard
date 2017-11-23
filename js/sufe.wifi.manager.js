@@ -116,31 +116,17 @@ function myOnload() {
     // when html is ready
     $(document).ready(function () {
         info_update();
-        // config_update();
-        log_update();
+        config_update();
     });
 
 }
 
 myOnload();
-$('#nav-start').click(function () {
-    service_start();
-});
-$('#nav-stop').click(function () {
-    service_stop();
-});
-$('#log-modal').on('shown.bs.modal', function (e) {
-    log_update();
-})
-$('#login-settings-modal').on('shown.bs.modal', function (e) {
-    config_update();
-})
-$('#other-settings-modal').on('shown.bs.modal', function (e) {
-    config_update();
-})
-$('#login-settings-save').click(function () {
-    login_config_submit();
-});
-$('#other-settings-save').click(function () {
-    other_config_submit();
-});
+$('#nav-start').click(service_start);
+$('#nav-stop').click(service_stop);
+$('#log-modal').on('shown.bs.modal',log_update);
+$('#login-settings-modal').on('shown.bs.modal',config_update);
+$('#other-settings-modal').on('shown.bs.modal',config_update);
+$('#login-settings-save').click(login_config_submit);
+$('#other-settings-save').click(other_config_submit);
+setInterval(info_update,3000);
