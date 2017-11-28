@@ -15,7 +15,7 @@ const Menu = electron.Menu
 function createWindow () {
   // Create the browser window.
   Menu.setApplicationMenu(null)
-  mainWindow = new BrowserWindow({width: 550, height: 600})
+  mainWindow = new BrowserWindow({width: 580, height: 600})
 
   // and load the index.html of the app.
   mainWindow.loadURL(url.format({
