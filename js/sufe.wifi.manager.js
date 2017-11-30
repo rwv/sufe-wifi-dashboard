@@ -65,9 +65,9 @@ function info_update() {
         error: function (jqXHR, status, error) {
             // Information Card
             $('#service-status').text('Error');
-            $('#internet-connection').text();
-            $('#network-type').text();
-            $('#ssid').text();
+            $('#internet-connection').text('');
+            $('#network-type').text('');
+            $('#ssid').text('');
             pop_error_alert(1);
         }
     });
