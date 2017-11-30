@@ -5,6 +5,8 @@ Shanghai University of Finance and Economics Wi-Fi Dashboard
 
 Based on electron.
 
+[Project site](https://sufe.zczc.cz)
+
 ## Build
 
 ``` bash
