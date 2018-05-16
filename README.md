@@ -5,7 +5,8 @@ Shanghai University of Finance and Economics Wi-Fi Dashboard
 
 Based on electron.
 
-[Project site](https://sufe.zczc.cz)
+**Because the auth method has changed, this project is deprecated.**<br>
+**由于登录方式的改变，此项目已废弃。**
 
 ## Build
 
